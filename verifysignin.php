@@ -27,7 +27,7 @@ while ($row = $seluser->fetch_assoc() and $flag1==0) {
 	}
 }
 if($flag1==0 and $flag2==0 ){
-	echo("No user found!");
+	echo("No user found! Please Sign up");
 }
 if($flag1!=0 and $flag2==0){
 	echo("Check your password");
