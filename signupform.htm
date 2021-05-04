@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.gridcontainer{
+  background-image:url("image1.jpg");
+  height:370px;
+  display: grid;
+  grid-template-columns: auto;
+  background-color: #2196F3;
+  padding: 1px;
+  text-align:center;
+}
+</style>
+<script>
+function validateForm() {
+  var a = document.getElementById('names').value;
+  if(a=="")
+    {
+	alert("Name must be filled out");
+	}
+  var b = document.getElementById('mail').value;
+  if(!b.includes("@")){alert("Invalid e-mail!");}
+  var c = document.getElementById('pass').value;
+  var i;
+  var j;
+  var flag=0;
+  for(i=0;i<10;i++)
+  {
+  j=i.toString();
+  if(c.includes(j))
+  {
+  flag=1;
+  break;
+  }
+  }
+  if(flag==0)
+  {
+  alert("Password should contain a number!");
+  }
+  var d = document.getElementById('qual').value;
+  if(d=="")
+    {
+	alert("Please Enter Your Qualifications!");
+	}
+	var e = document.getElementById('skill').value;
+  if(e=="")
+    {
+	alert("Please Enter Skills");
+	}
+	var f = document.getElementById('abt').value;
+  if(f=="")
+    {
+	alert("Please tell us something about yoursels!");
+	}
+	var f=document.getElementById('gen1').checked;
+	var g=document.getElementById('gen2').checked;
+	if(!f&&!g){
+	alert("Please Select your Gender!");
+	}
+}
+</script>
+</head>
+<body>
+
+<h2 style="text-align:center;">JavaScript validation for empty input field</h2>
+<div class="gridcontainer">
+<form action="adduser.php" method="post" onsubmit="validateForm()">
+  <b>Name</b> <br><input type="text" id="names" name="name"><br><br>
+  <b>Email</b> <br><input type="text" id="mail" name="email"><br><br>
+  <b>Password</b><br> <input type="password" id="pass" name="password"><br><br>
+  <b>Gender: Male</b><input type="radio" id="gen1" name="gender" value="male">
+  <b>Female</b><input type="radio" id="gen2" name="gender" value="female"><br><br>
+  <b>Qualification</b><br> <input type="text" id="qual" name="fname"><br><br>
+  <b>Skills</b><br> <input type="text" id="skill" name="fname"><br><br>
+  <b>About Yourself</b><br> <input type="text" id="abt" name="fname"><br><br>
+  <input type="submit" value="submits">
+</form>
+</div>
+</body>
+</html>
